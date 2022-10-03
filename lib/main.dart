@@ -4,10 +4,11 @@ import 'package:misiontic_todo/ui/controllers/database.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:misiontic_todo/ui/app.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // TODO: Inicializa Firebase usando el archivo de opciones creado por flutterfire
+  await Firebase.initializeApp();
   Get.put(DatabaseController());
   runApp(const ToDoApp());
 }

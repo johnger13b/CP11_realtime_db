@@ -19,7 +19,11 @@ class _State extends State<RealTimeContentPage> {
     super.initState();
     _textController = TextEditingController();
     controller = Get.find();
-    // TODO: Agrega un listener al stream del controlador y actualiza la vista.
+    controller.toDoStream.listen((data) {
+      setState(() {
+        controller.toDos = data;
+      });
+    });
   }
 
   @override
@@ -49,7 +53,9 @@ class _State extends State<RealTimeContentPage> {
                   ElevatedButton(
                       onPressed: () {
                         final toDo = ToDo(content: _textController.text);
-                        // TODO: Guarda el todo en la base de datos usando el controlador, no actualices el estado.
+                        controller.saveToDo(data: toDo).then((_) {
+                          _textController.clear();
+                        });
                       },
                       child: const Text("Aceptar"))
                 ],
@@ -74,14 +80,14 @@ class _State extends State<RealTimeContentPage> {
                             ),
                             onPressed: () {
                               toDo.completed = true;
-                              // TODO: Actualiza el todo en la base de datos usando el controlador, no actualices el estado.
+                              controller.updateToDo(data: toDo);
                             },
                           ),
                         ),
                         title: Text(toDo.content),
                         trailing: IconButton(
                           onPressed: () {
-                            // TODO: Elimida el todo de la base de datos usando el controlador, no actualices el estado.
+                            controller.deleteToDo(uuid: toDo.uuid);
                           },
                           icon: const Icon(
                             Icons.delete_forever_rounded,
@@ -96,7 +102,7 @@ class _State extends State<RealTimeContentPage> {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.delete_sweep_rounded),
         onPressed: () {
-          // TODO: Elimida todos los ToDO de la base de datos usando el controlador, no actualices el estado.
+          controller.clear();
         },
       ),
     );

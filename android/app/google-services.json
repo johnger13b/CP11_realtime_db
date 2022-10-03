@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "370637665097",
+    "firebase_url": "https://tiemporeal-3de2a-default-rtdb.firebaseio.com",
+    "project_id": "tiemporeal-3de2a",
+    "storage_bucket": "tiemporeal-3de2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370637665097:android:86231a974c6e7856b0a098",
+        "android_client_info": {
+          "package_name": "com.example.f_realtime_db"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370637665097-b8i6t95ko7rlf9s98ebn98m8hkcdend0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnaqlHDhw44mvhHsQTxLQp7V3HuMCzO_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370637665097-b8i6t95ko7rlf9s98ebn98m8hkcdend0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

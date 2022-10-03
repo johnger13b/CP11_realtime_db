@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:misiontic_todo/ui/pages/content_page.dart';
 import 'package:misiontic_todo/ui/pages/realtime_content_page.dart';
 
 class ToDoApp extends StatelessWidget {
